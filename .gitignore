@@ -1,0 +1,19 @@
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+#python cache
+__pycache__
+
+# other
+BSD_Designs
+
+# python virtual environment
+venv
+
+# project specific vim configurations
+.vim
+
+# local database
+app.db

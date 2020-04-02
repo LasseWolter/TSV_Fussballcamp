@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Für das Camp anmelden</h1>
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.vorname.label }} <br>
+        {{ form.vorname(size=32) }}<br>
+        {% for error in form.vorname.errors %}
+        <span style="color:red">[{{error}}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.nachname.label }} <br>
+        {{ form.nachname(size=32) }}<br>
+        {% for error in form.nachname.errors %}
+        <span style="color:red">[{{error}}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.email.label }} <br>
+        {{ form.email(size=32) }}<br>
+        {% for error in form.email.errors %}
+        <span style="color:red">[{{error}}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.telefon.label }} <br>
+        {{ form.telefon(size=32) }}<br>
+        {% for error in form.telefon.errors %}
+        <span style="color:red">[{{error}}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.plz.label }} <br>
+        {{ form.plz(size=32) }}<br>
+        {% for error in form.plz.errors %}
+        <span style="color:red">[{{error}}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.ort.label }} <br>
+        {{ form.ort(size=32) }}<br>
+        {% for error in form.ort.errors %}
+        <span style="color:red">[{{error}}]</span> {% endfor %}
+    </p>
+    <p>
+        {{ form.jersey_size.label }} <br>
+        {{ form.jersey_size }}<br>
+        {% for error in form.jersey_size.errors %}
+        <span style="color:red">[{{error}}]</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.jersey_print.label }} <br>
+        {{ form.jersey_print(size=32) }}<br>
+        {% for error in form.jersey_print.errors %}
+        <span style="color:red">[{{error}}]</span>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+
+{% endblock %}

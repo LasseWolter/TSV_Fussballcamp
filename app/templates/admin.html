@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1> TSV Fußballcamp - Chef-Seite </h1>
+    <p style="font-style:italic"> Hier werden alle registrierten Kinder mit Informationen angezeigt </p>
+    <table id="t01">
+        <th>Vorname</th>
+        <th>Nachname</th>
+        <th>Telefon</th>
+        <th>PLZ</th>
+        <th>Ort</th>
+        <th>Trikot-Größe</th>
+        <th>Trikot-Aufdruck</th>
+    {% for user in users %}
+        <tr>
+        <td> {{ user.vorname }} </td>
+        <td> {{ user.nachname}} </td>
+        <td>{{ user.telefon }} </td>
+        <td>{{ user.plz }}</td>
+        <td>{{ user.ort}} </td>
+        <td> {{ user.jersey_size }} </td>
+        <td> {{ user.jersey_print }} </td>
+    {% endfor %}
+    </table>
+{% endblock %}
