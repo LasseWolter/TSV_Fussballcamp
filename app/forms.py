@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Email, ValidationError, Length
-from app.models import User
+from app.models import Player 
 
 class SignUpForm(FlaskForm):
     vorname = StringField('Vorname', validators=[DataRequired()])
@@ -15,8 +15,8 @@ class SignUpForm(FlaskForm):
     submit = SubmitField('Anmelden')
     
     def validate_email(self, email):
-        user = User.query.filter_by(email=email.data).first()
-        if user is not None:
+        player = Player.query.filter_by(email=email.data).first()
+        if player is not None:
             raise ValidationError('This email is already in use.')
 
     def validate_telefon(self, telefon):
@@ -24,8 +24,8 @@ class SignUpForm(FlaskForm):
             int(telefon.data)
         except ValueError:
             raise ValidationError('This is not a valid phone number.')
-        user = User.query.filter_by(telefon=telefon.data).first()
-        if user is not None:
+        player = Player.query.filter_by(telefon=telefon.data).first()
+        if player is not None:
             raise ValidationError('This telefon number is already in use.')
 
     def validate_plz(self, plz):

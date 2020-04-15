@@ -1,6 +1,6 @@
 from app import db
 
-class User(db.Model):
+class Player(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     vorname = db.Column(db.String(64), index=True)
     nachname = db.Column(db.String(64), index=True)
@@ -12,5 +12,5 @@ class User(db.Model):
     jersey_print = db.Column(db.String(10), index=True)
 
     def __repr__(self):
-        return '<User {} {}>'.format(self.vorname, self.nachname)
+        return '<Player {} {}>'.format(self.vorname, self.nachname)
 

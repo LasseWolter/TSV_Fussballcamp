@@ -4,9 +4,10 @@
 <h1>Für das Camp anmelden</h1>
 <form action="" method="post" novalidate>
     {{ form.hidden_tag() }}
+    <!-- The size=32 refers to the width of the field on the screen -->
     <p>
         {{ form.vorname.label }} <br>
-        {{ form.vorname(size=32) }}<br>
+        {{ form.vorname(size=32) }}<br> 
         {% for error in form.vorname.errors %}
         <span style="color:red">[{{error}}]</span>
         {% endfor %}
