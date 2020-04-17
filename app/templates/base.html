@@ -18,6 +18,9 @@
         <a href="/index">Home</a>
         <a href="/signup">Anmelden</a>
         <a href="/admin">Chef</a>
+        {% if current_user.is_anonymous == False %}
+        <a href="/logout">Logout</a>
+        {% endif %}
     </div>
     <hr>
     {% with messages= get_flashed_messages() %}

@@ -33,3 +33,8 @@ class SignUpForm(FlaskForm):
             int(plz.data)
         except ValueError:
             raise ValidationError('This is not a valid plz.')
+
+class AdminLoginForm(FlaskForm):
+    username = StringField('Benutzername', validators=[DataRequired()])
+    password = StringField('Password', validators=[DataRequired()])
+    submit = SubmitField('Einloggen')

@@ -13,3 +13,7 @@ tr
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.error {
+  color: red;
+}
