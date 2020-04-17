@@ -13,11 +13,11 @@
         <th>Trikot-Aufdruck</th>
     {% for player in players %}
         <tr>
-        <td> {{ player.vorname }} </td>
-        <td> {{ player.nachname}} </td>
-        <td>{{ player.telefon }} </td>
+        <td> {{ player.firstname }} </td>
+        <td> {{ player.lastname}} </td>
+        <td>{{ player.phone }} </td>
         <td>{{ player.plz }}</td>
-        <td>{{ player.ort}} </td>
+        <td>{{ player.city}} </td>
         <td> {{ player.jersey_size }} </td>
         <td> {{ player.jersey_print }} </td>
     {% endfor %}

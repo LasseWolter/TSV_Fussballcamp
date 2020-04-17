@@ -15,8 +15,8 @@ def index():
 def signup():
     form = SignUpForm();
     if form.validate_on_submit():
-        player = Player(vorname=form.vorname.data, nachname=form.nachname.data, telefon=form.telefon.data, email=form.email.data,
-                    plz=form.plz.data, ort=form.ort.data, jersey_size=form.jersey_size.data, jersey_print=form.jersey_print.data)
+        player = Player(firstname=form.firstname.data, lastname=form.lastname.data, phone=form.phone.data, email=form.email.data,
+                        plz=form.plz.data, city=form.city.data, jersey_size=form.jersey_size.data, jersey_print=form.jersey_print.data)
         flash("Neue Anmeldung: " + str(player))
         db.session.add(player)
         db.session.commit()

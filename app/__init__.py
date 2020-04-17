@@ -12,4 +12,11 @@ migrate = Migrate(application,db)
 login = LoginManager(application)
 login.login_view='login'
 
+# polyfill for altering tables in case of SQLite
+with application.app_context():
+    if db.engine.url.drivername == 'sqlite':
+        migrate.init_app(application, db, render_as_batch=True)
+    else:
+        migrate.init_app(application, db)
+
 from app import routes, models
